@@ -3,14 +3,15 @@ package akka.first.app.scala.actors
 import java.util.HashMap
 
 import scala.collection.JavaConversions.asScalaSet
-
 import akka.actor.Actor
 import akka.first.app.scala.ReduceData
 import akka.first.app.scala.Result
+import akka.util.LineNumbers.Result
 
 class AggregateActor extends Actor {
 
 	var finalReducedMap = new HashMap[String, Integer]
+
 
 	def receive: Receive = {
 		case message: ReduceData =>
